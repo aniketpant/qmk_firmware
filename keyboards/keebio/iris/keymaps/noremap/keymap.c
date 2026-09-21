@@ -34,29 +34,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LALT,        KC_LGUI, LT(_RAISE,KC_SPC), LT(_RAISE,KC_SPC), KC_RGUI, LOWER
   ),
 
-  /* Raise — Navigation (Dvorak-mnemonic)
+  /* Raise — Navigation + Symbols
    *
-   * Left hand home row = page nav:
-   *   A = Home    (A = All the way to start)
-   *   O = End     (O = Over, finished)
-   *   E = PgUp    (E = Earlier page)
-   *   U = PgDn    (U = Under, next page)
-   *   I = Ins     (I = Insert)
+   * Left home row (A O E U I) — muscle memory + mnemonics:
+   *   A = Ent  (A = Accept/affirm — original position kept)
+   *   O = MINS (- _) (original position kept)
+   *   E = EQL  (= +) (E = Equals — original position kept)
+   *   U = PGDN (U = Under — vacant slot, new)
+   *   I = Home (original position kept)
    *
-   * Right hand home row = arrows:
-   *   D = Left    (D = leftmost finger, "D"irection)
-   *   H = Down    (H = How low / Hole)
-   *   T = Up      (T = Top — strong mnemonic!)
-   *   N = Right   (N = Next — strong mnemonic!)
-   *   S = Del     (S = Strike / remove)
+   * Left bottom row (; Q J K X) — vim + code mnemonics:
+   *   ; = End  (; ends a line in code — pinky End)
+   *   Q = Left  (vim H-role: left of J)
+   *   J = Down  (vim J = Down — same key!)
+   *   K = Up    (vim K = Up — same key!)
+   *   X = Right (spatial: rightmost of cluster = Right)
+   *   Arrows slid one key right vs original (;QJK->QJKX) so End
+   *   takes the pinky and the vim J/K land on their own letters.
    *
-   * Top rows = brackets/symbols (left hand = brackets, right hand = misc)
+   * Right hand = bilateral mirror (hold LEFT Raise thumb):
+   *   Home row (D H T N S) = Left Down Up Right Del (arrows)
+   *   Top row (F G C R I) = Home End PgUp PgDn Ins (page nav)
+   *   Bottom (B M) = MINS EQL, pinky (Z) = ENT (right-hand hyphen
+   *     + right-hand Enter via Raise).
+   *
+   * Top-left = brackets, Row0 = shifted numbers.
    */
   [_RAISE] = LAYOUT(
     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
-    KC_GRV,  KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_BSLS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_NO,   KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_INS,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,  KC_NO,
-    KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,  KC_BSPC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_GRV,  KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_BSLS, KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_INS,  KC_NO,
+    KC_NO,   KC_ENT,  KC_MINS, KC_EQL,  KC_PGDN, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,  KC_NO,
+    KC_LSFT, KC_END,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT,  KC_BSPC, KC_MINS, KC_EQL,  KC_NO,   KC_NO,   KC_NO,   KC_ENT,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 

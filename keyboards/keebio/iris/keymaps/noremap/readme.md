@@ -70,29 +70,56 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 
 ---
 
-## Raise layer — Navigation (Dvorak-mnemonic)
+## Raise layer — Navigation + Symbols
 
 ```
 ┌─────┬────┬────┬────┬────┬────┐         ┌────┬────┬────┬────┬────┬─────┐
 │ ~   │ !  │ @  │ #  │ $  │ %  │         │ ^  │ &  │ *  │ (  │ )  │ Del │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│ `   │ [  │ ]  │ {  │ }  │ \  │         │    │    │    │    │    │     │
+│ `   │ [  │ ]  │ {  │ }  │ \  │         │Home│End │PgUp│PgDn│Ins │     │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│     │Home│End │PgUp│PgDn│Ins │         │ ←  │ ↓  │ ↑  │ →  │ Del│     │
+│     │Ent │ -  │ =  │PgDn│Home│         │ ←  │ ↓  │ ↑  │ →  │ Del│     │
 ├─────┼────┼────┼────┼────┼────┼────┬────┼────┼────┼────┼────┼────┼─────┤
-│ Sft │    │    │    │    │    │Ent │Bspc│    │    │    │    │    │     │
+│ Sft │End │ ←  │ ↓  │ ↑  │ →  │Ent │Bspc│ -  │ =  │    │    │    │ Ent │
 └─────┴────┴────┴────┼────┼────┼────┼────┼────┼────┼────┴────┴────┴─────┘
                      │    │    │    │    │    │    │
                      └────┴────┴────┴────┴────┴────┘
 ```
 
-**Dvorak mnemonics:**
-- **Left hand home row**: A=Home (All the way), O=End (Over), E=PgUp (Earlier), U=PgDn (Under), I=Ins (Insert)
-- **Right hand home row**: D=Left (leftmost finger), H=Down, T=Up (Top), N=Right (Next), S=Del (Strike)
+**Left home row (`A O E U I`) — original slots, mnemonic labels:**
+- `A` = `Ent` (A = Accept — original position kept)
+- `O` = `-` (original position kept)
+- `E` = `=` (E = Equals — original position kept)
+- `U` = `PgDn` (U = Under — the one vacant slot, new)
+- `I` = `Home` (original position kept)
+
+**Left bottom row (`; Q J K X`) — arrows slid right by one:**
+- `;` = `End` (; ends a line in code — pinky End)
+- `Q` = `←` (vim H-role: immediately left of J)
+- `J` = `↓` (vim J = Down — same key!)
+- `K` = `↑` (vim K = Up — same key!)
+- `X` = `→` (spatial: rightmost of cluster = Right)
+- vs original (`← ↓ ↑ →` on `; Q J K` + `End` on `X`): same keys, `End` moves to the pinky and `→` to `X`
+
+**Bilateral use — either thumb works:**
+- Hold **right** Raise thumb → left hand does `Ent / - / =` (home) or vim-arrows (bottom)
+- Hold **left** Raise thumb → right hand does arrows (home `D-H-T-N`), page nav (top `F-G-C-R-I` = Home/End/PgUp/PgDn/Ins), or `- / =` (bottom `B-M`)
+
+**Developer symbols:**
+- `-` / `_` = `KC_MINS` on left home (`O` position) and right bottom (`B` position)
+- `=` / `+` = `KC_EQL` on left home (`E` position) and right bottom (`M` position)
+- Brackets `[ ] { }` stay on left top row, `\` and `` ` `` alongside
+- Tip: `Lower` numpad also has `-` / `+` (`KC_PMNS` / `KC_PPLS`) if you prefer the numpad
+
+**Right-hand Enter (transition aid):**
+- Base `Ent` lives on the left inner key — stick with it a few days, it beds in fast
+- Meanwhile `Raise + right pinky` (`Z` position) is also `Ent`, plus `Raise + A` is `Ent` (original position), so the old muscle memory still works
+- `Raise` inners mirror Base: left inner `Ent`, right inner `Bspc`
 
 **Why this works:**
-- Page nav on left hand = your strongest fingers, all on home row
-- Arrows on right hand = Dvorak `D-H-T-N` are adjacent, `T` for Top and `N` for Next are strong mnemonics
+- Left home keeps all four original keys (`Ent / - / = / Home`) — zero re-learning, plus `U` = Under/PgDn fills the gap
+- Left bottom keeps arrows on the left hand but with real mnemonics: vim `J/K`, code `;` = End, spatial `X` = Right
+- Right half adds the mirror: arrows on home row, page nav one row up, `- / =` + `Ent` on the bottom
 - Left hand top row = brackets `[ ] { }` (mirrors Dvorak symbol row muscle memory)
 
 ---
