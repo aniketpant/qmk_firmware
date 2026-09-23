@@ -37,7 +37,7 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 | **Base** | Default | Dvorak typing, Hyper-Tab, Game toggle |
 | **Raise** | Hold either inner thumb (`Space` position) | Navigation with Dvorak mnemonics |
 | **Lower** | Hold right outer key | Numpad, media, F-keys, RGB underglow |
-| **Game** | Tap `S` key (base layer right pinky) | QWERTY gaming layer |
+| **Game** | Tap `Ct/Gm` (base right pinky) | QWERTY gaming layer |
 | **Adjust** | Hold **Lower + Raise** simultaneously | Boot, RGB fine-tuning |
 
 ---
@@ -51,9 +51,9 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 │Hyper│ '  │ ,  │ .  │ P  │ Y  │         │ F  │ G  │ C  │ R  │ L  │  /  │
 │/Tab │    │    │    │    │    │         │    │    │    │    │    │     │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│ Ctl │ A  │ O  │ E  │ U  │ I  │         │ D  │ H  │ T  │ N  │ S  │Game │
+│ Ctl │ A  │ O  │ E  │ U  │ I  │         │ D  │ H  │ T  │ N  │ S  │Ct/Gm│
 ├─────┼────┼────┼────┼────┼────┼────┬────┼────┼────┼────┼────┼────┼─────┤
-│ Sft │ ;  │ Q  │ J  │ K  │ X  │Ent │Bspc│ B  │ M  │ W  │ V  │ Z  │AltGr│
+│ Sft │ ;  │ Q  │ J  │ K  │ X  │Bspc│Ent │ B  │ M  │ W  │ V  │ Z  │S+Ent│
 └─────┴────┴────┴────┼────┼────┼────┼────┼────┼────┼────┴────┴────┴─────┘
                      │Alt │Gui │Rse │Rse │Gui │Lwr │
                      └────┴────┴────┴────┴────┴────┘
@@ -63,10 +63,18 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 - **Both inners** (`Rse`) = tap `Space`, hold `Raise`
 - **Right outer** (`Lwr`) = momentary `Lower` (no tap function)
 
+**Inner keys:**
+- `Ent` = **right** inner (right thumb) — so `Shift` (left pinky) + `Ent` is cross-hand
+- `Bspc` = **left** inner (left thumb)
+- `S+Ent` = **right outer pinky** = `S(KC_ENT)` — one key that sends `Shift+Enter` as a chord
+
 **Special keys:**
 - `Hyper/Tab` = `LCAG_T(KC_TAB)` — tap for Tab, hold for Ctrl+Alt+Cmd
 - `Game` = tap to enter Game layer
+- `Ct/Gm` = `RCTL_T(GAME)` — hold for right `Ctrl` (makes `Ctrl+A/E/U/K/W/R`
+  cross-hand), tap for Game layer
 - `Esc~` = `QK_GESC` — tap for Esc, Shift+tap for `~`
+- `S+Ent` = `S(KC_ENT)` — one key that sends `Shift+Enter` (was `AltGr`)
 
 ---
 
@@ -78,49 +86,37 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
 │ `   │ [  │ ]  │ {  │ }  │ \  │         │Home│End │PgUp│PgDn│Ins │     │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│     │Ent │ -  │ =  │PgDn│Home│         │ ←  │ ↓  │ ↑  │ →  │ Del│     │
+│     │Ent │ -  │ =  │PgDn│Home│         │Home│PgDn│ =  │ -  │ Del│     │
 ├─────┼────┼────┼────┼────┼────┼────┬────┼────┼────┼────┼────┼────┼─────┤
-│ Sft │End │ ←  │ ↓  │ ↑  │ →  │Ent │Bspc│ -  │ =  │    │    │    │ Ent │
+│ Sft │ ←  │ ↓  │ ↑  │ →  │End │Bspc│Ent │ ←  │ ↓  │ ↑  │ →  │End │     │
 └─────┴────┴────┴────┼────┼────┼────┼────┼────┼────┼────┴────┴────┴─────┘
                      │    │    │    │    │    │    │
                      └────┴────┴────┴────┴────┴────┘
 ```
 
-**Left home row (`A O E U I`) — original slots, mnemonic labels:**
-- `A` = `Ent` (A = Accept — original position kept)
-- `O` = `-` (original position kept)
-- `E` = `=` (E = Equals — original position kept)
-- `U` = `PgDn` (U = Under — the one vacant slot, new)
-- `I` = `Home` (original position kept)
+**Arrows — bottom row of BOTH halves, read the same left-to-right:**
+- Left  (`; Q J K X`) = `← ↓ ↑ → End`
+- Right (`B M W V Z`) = `← ↓ ↑ → End`
+- Same order on both halves: leftmost = Left, then Down, Up, Right, End on
+  the innermost key
+- This restores the original left-hand positions (`← ↓ ↑ →` on `; Q J K`,
+`End` on `X`); the previous build had slid them one column right.
 
-**Left bottom row (`; Q J K X`) — arrows slid right by one:**
-- `;` = `End` (; ends a line in code — pinky End)
-- `Q` = `←` (vim H-role: immediately left of J)
-- `J` = `↓` (vim J = Down — same key!)
-- `K` = `↑` (vim K = Up — same key!)
-- `X` = `→` (spatial: rightmost of cluster = Right)
-- vs original (`← ↓ ↑ →` on `; Q J K` + `End` on `X`): same keys, `End` moves to the pinky and `→` to `X`
+**- / = — home row of BOTH halves, under the resting ring/middle fingers:**
+- Left  (`A O E U I`) = `Ent - = PgDn Home`
+- Right (`D H T N S`) = `Home PgDn = - Del`
+- `-` / `_` = `KC_MINS`, `=` / `+` = `KC_EQL`, in the same finger slot on each hand
+- Brackets `[ ] { }` stay on the left top row; page nav (`Home/End/PgUp/PgDn/Ins`)
+stays on the right top row
 
-**Bilateral use — either thumb works:**
-- Hold **right** Raise thumb → left hand does `Ent / - / =` (home) or vim-arrows (bottom)
-- Hold **left** Raise thumb → right hand does arrows (home `D-H-T-N`), page nav (top `F-G-C-R-I` = Home/End/PgUp/PgDn/Ins), or `- / =` (bottom `B-M`)
-
-**Developer symbols:**
-- `-` / `_` = `KC_MINS` on left home (`O` position) and right bottom (`B` position)
-- `=` / `+` = `KC_EQL` on left home (`E` position) and right bottom (`M` position)
-- Brackets `[ ] { }` stay on left top row, `\` and `` ` `` alongside
-- Tip: `Lower` numpad also has `-` / `+` (`KC_PMNS` / `KC_PPLS`) if you prefer the numpad
-
-**Right-hand Enter (transition aid):**
-- Base `Ent` lives on the left inner key — stick with it a few days, it beds in fast
-- Meanwhile `Raise + right pinky` (`Z` position) is also `Ent`, plus `Raise + A` is `Ent` (original position), so the old muscle memory still works
-- `Raise` inners mirror Base: left inner `Ent`, right inner `Bspc`
+**Inner thumbs mirror Base:** left inner `Bspc`, right inner `Ent`.
 
 **Why this works:**
-- Left home keeps all four original keys (`Ent / - / = / Home`) — zero re-learning, plus `U` = Under/PgDn fills the gap
-- Left bottom keeps arrows on the left hand but with real mnemonics: vim `J/K`, code `;` = End, spatial `X` = Right
-- Right half adds the mirror: arrows on home row, page nav one row up, `- / =` + `Ent` on the bottom
-- Left hand top row = brackets `[ ] { }` (mirrors Dvorak symbol row muscle memory)
+- The nav layer now reads the same from either hand: arrows on the bottom,
+symbols on the home row, page nav on the top
+- `-` / `=` are directly under the fingers that rest on `O E` / `N T`
+- Enter is one thumb away on the right, so `Shift + Enter` is cross-hand;
+`S+Ent` also fires `Shift+Enter` as a single chord
 
 ---
 
@@ -130,7 +126,7 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 ┌─────┬────┬────┬────┬────┬────┐         ┌────┬────┬────┬────┬────┬─────┐
 │ F12 │ F1 │ F2 │ F3 │ F4 │ F5 │         │ F6 │ F7 │ F8 │ F9 │ F10│ F11 │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│RGB T│RGB+│Hue+│Hue-│Sat+│Sat-│         │ 7  │ 8  │ 9  │ /  │ *  │     │
+│RGB T│RGB+│Hue+│Hue-│Pst │Ynk │         │ 7  │ 8  │ 9  │ /  │ *  │     │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
 │Play │Next│Prev│Vol+│Vol-│Mute│         │ 4  │ 5  │ 6  │ -  │ +  │     │
 ├─────┼────┼────┼────┼────┼────┼────┬────┼────┼────┼────┼────┼────┼─────┤
@@ -141,7 +137,15 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 ```
 
 **Right hand numpad** is a standard calculator block — `7-8-9` / `4-5-6` / `1-2-3` / `0-.` — universally familiar.  
-**Left hand** = media cluster + RGB underglow controls (`UG_TOGG`, `UG_NEXT`, `UG_HUEU/D`, `UG_SATU/D`).
+**Left hand** = media cluster + RGB underglow controls (`UG_TOGG`, `UG_NEXT`, `UG_HUEU/D`).
+
+**Left top row = clipboard** (Linux terminal), vim-mnemonic:
+- `P` (put) = `Ctrl+Shift+V` (paste)
+- `Y` (yank) = `Ctrl+Shift+C` (copy)
+- On macOS just use base `Cmd+C` / `Cmd+V`. Firmware can't detect the OS, so
+  the OS-specific chord lives on the layer.
+- The readline chords are **not** on a layer: use right `Ctrl` + the letter
+  on base (`Ctrl+A/E/U/K/W/R/L`), which is the mnemonic itself.
 
 ---
 
@@ -200,6 +204,7 @@ LSFT_T(KC_SCLN) // hold Shift, tap ;
 LALT_T(KC_Q)    // hold Alt, tap Q
 LGUI_T(KC_J)    // hold Gui/Cmd, tap J
 // Combos: LSFT, RSFT, LCTL, RCTL, LALT, RALT, LGUI, RGUI, LCAG (Ctrl+Alt+Gui), MEH (Ctrl+Alt+Shift), HYPR (all)
+// Modified keys in a keymap: S(KC_ENT) = Shift+Enter, C(KC_A) = Ctrl+A, etc.
 ```
 
 ### Layer-taps (hold for layer, tap for key)
@@ -323,4 +328,10 @@ To enter bootloader:
 ## Last modified
 
 - 2025 — refactored for Iris Rev.5 (was incorrectly targeting rev6)
-- Dvorak-mnemonic navigation: A=Home, O=End, E=PgUp, U=PgDn, T=Up, N=Right
+- Feedback pass: Enter moved to right inner (cross-hand Shift+Enter), arrows
+  unified on the bottom row of both halves in the same left-to-right order,
+  `-`/`=` moved to the home row of both halves, right outer (ex-AltGr) is now
+  `S(KC_ENT)` (Shift+Enter chord)
+- Right pinky `RCTL_T(GAME)` (right Ctrl / Game) so readline chords are
+  right `Ctrl` + letter; Lower's `P`/`Y` send Linux `Ctrl+Shift+V/C`
+  (vim put/yank)
