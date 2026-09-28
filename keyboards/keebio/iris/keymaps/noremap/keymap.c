@@ -53,11 +53,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *
    * Inner thumbs mirror Base: left inner = Bspc, right inner = Ent.
    * Top-left = brackets, top-right = page nav, Row0 = shifted numbers.
+   * Outer-right pinky pair = | over ?, the one shifted pair that has no
+   *   unshifted partner on Base (so it is unreachable from Base+Shift):
+   *   r1c11 = | , r2c11 = ? , under the Ins / Del they mirror.
+   * The other shifted symbols (< > : " _ +) are all reachable by holding
+   *   the KC_LSFT at r3c0 and tapping their unshifted partner.
    */
   [_RAISE] = LAYOUT(
     KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
-    KC_GRV,  KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_BSLS, KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_INS,  KC_NO,
-    KC_NO,   KC_ENT,  KC_MINS, KC_EQL,  KC_PGDN, KC_HOME, KC_HOME, KC_PGDN, KC_EQL,  KC_MINS, KC_DEL,  KC_NO,
+    KC_GRV,  KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_BSLS, KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_INS,  KC_PIPE,
+    KC_NO,   KC_ENT,  KC_MINS, KC_EQL,  KC_PGDN, KC_HOME, KC_HOME, KC_PGDN, KC_EQL,  KC_MINS, KC_DEL,  KC_QUES,
     KC_LSFT, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  KC_BSPC, KC_ENT,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  KC_NO,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),

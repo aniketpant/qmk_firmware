@@ -84,9 +84,9 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 ┌─────┬────┬────┬────┬────┬────┐         ┌────┬────┬────┬────┬────┬─────┐
 │ ~   │ !  │ @  │ #  │ $  │ %  │         │ ^  │ &  │ *  │ (  │ )  │ Del │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│ `   │ [  │ ]  │ {  │ }  │ \  │         │Home│End │PgUp│PgDn│Ins │     │
+│ `   │ [  │ ]  │ {  │ }  │ \  │         │Home│End │PgUp│PgDn│Ins │|    │
 ├─────┼────┼────┼────┼────┼────┤         ├────┼────┼────┼────┼────┼─────┤
-│     │Ent │ -  │ =  │PgDn│Home│         │Home│PgDn│ =  │ -  │ Del│     │
+│     │Ent │ -  │ =  │PgDn│Home│         │Home│PgDn│ =  │ -  │ Del│?    │
 ├─────┼────┼────┼────┼────┼────┼────┬────┼────┼────┼────┼────┼────┼─────┤
 │ Sft │ ←  │ ↓  │ ↑  │ →  │End │Bspc│Ent │ ←  │ ↓  │ ↑  │ →  │End │     │
 └─────┴────┴────┴────┼────┼────┼────┼────┼────┼────┼────┴────┴────┴─────┘
@@ -108,6 +108,14 @@ The Iris Rev.5 is a 56-key split ergo with a 6-column + 3-thumb layout.
 - `-` / `_` = `KC_MINS`, `=` / `+` = `KC_EQL`, in the same finger slot on each hand
 - Brackets `[ ] { }` stay on the left top row; page nav (`Home/End/PgUp/PgDn/Ins`)
 stays on the right top row
+
+**`|` and `?` — outer-right pinky, stacked under `Ins` / `Del`:**
+- Top row outer (`V`) = `|` = `KC_PIPE`; home row outer (`S`) = `?` = `KC_QUES`
+- These are the only two shifted symbols with **no** unshifted partner on Base,
+so Base+Shift cannot produce them — they need a real key
+- Every other shifted symbol (`< > : " _ +`) is reachable by holding the `Sft`
+at the bottom-left of this layer and tapping its unshifted partner, since `-`,
+`=`, `,`, `.`, `;`, `'` and `/` are all on Base or on this layer
 
 **Inner thumbs mirror Base:** left inner `Bspc`, right inner `Ent`.
 
